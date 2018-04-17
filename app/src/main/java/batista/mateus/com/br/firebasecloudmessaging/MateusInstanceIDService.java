@@ -7,7 +7,7 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class FirebaseMessagingService extends FirebaseInstanceIdService {
+public class MateusInstanceIDService extends FirebaseInstanceIdService {
 
     @Override
     public void onTokenRefresh() {
