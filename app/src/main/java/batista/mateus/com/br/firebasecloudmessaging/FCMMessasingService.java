@@ -18,7 +18,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Random;
 
-public class MateusMessasingService extends FirebaseMessagingService{
+public class FCMMessasingService extends FirebaseMessagingService{
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
