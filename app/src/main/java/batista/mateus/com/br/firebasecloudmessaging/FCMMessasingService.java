@@ -61,12 +61,7 @@ public class FCMMessasingService extends FirebaseMessagingService{
                                 .setContentText(messageString);
 
                 mBuilder.setContentIntent(contentIntent);
-
                 Notification notification = mBuilder.build();
-                notification.ledARGB = color;
-                notification.flags = Notification.FLAG_SHOW_LIGHTS|Notification.FLAG_AUTO_CANCEL;
-                notification.ledOnMS = 1000;
-                notification.ledOffMS = 1000;
 
                 mNotificationManager.notify(0, notification);
 
