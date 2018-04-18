@@ -28,15 +28,13 @@ public class FCMMessasingService extends FirebaseMessagingService{
             if (remoteMessage.getData().size() > 0) {
 
                 String messageString = remoteMessage.getData().get("message");
+
                 Intent it = new Intent(this, MainActivity.class);
-                Random r = new Random();
-                int notificationId = Math.abs(r.nextInt());
-                PendingIntent contentIntent = PendingIntent.getActivity(this, notificationId, it, 0);
-
+                PendingIntent contentIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), it, 0);
                 Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                int ico_notification = R.drawable.starkicon;
+                int color = ContextCompat.getColor(this, R.color.starkColor);
 
-                int ico_notification = R.drawable.ic_launcher_background;
-                int color = ContextCompat.getColor(this, R.color.colorPrimary);
 
                 NotificationManager mNotificationManager = (NotificationManager)
                         this.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -70,7 +68,7 @@ public class FCMMessasingService extends FirebaseMessagingService{
                 notification.ledOnMS = 1000;
                 notification.ledOffMS = 1000;
 
-                mNotificationManager.notify(notificationId, notification);
+                mNotificationManager.notify(0, notification);
 
 
             }
